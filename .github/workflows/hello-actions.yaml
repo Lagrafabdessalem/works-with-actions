@@ -1,12 +1,12 @@
 name: hello actions
-  on:
-    push:
+on:
+   push:
+     branches:
+      - main
+   pull_request:
       branches:
         - main
-    pull_request:
-      branches:
-        - main
-    workflow_dispatch:
+   workflow_dispatch:
 
 jobs:
   hello:
@@ -17,7 +17,7 @@ jobs:
         run: echo "Hello Actions !!"
         shell: bash
 
-   goodbye:
+  goodbye:
      runs-on: ubuntu-latest
      steps:
        - name: goodbye actions
